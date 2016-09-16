@@ -1,0 +1,22 @@
+{
+  "name": "turn-app",
+  "version": "0.1.0",
+  "description": "A platform that gives doctors the oportunity to manage their clients turns. ",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabyRive/turn-app.git"
+  },
+  "author": "Gabriela Rivera",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/GabyRive/turn-app/issues"
+  },
+  "homepage": "https://github.com/GabyRive/turn-app#readme"
+}

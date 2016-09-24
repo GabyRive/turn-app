@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,15 @@
   "bugs": {
     "url": "https://github.com/GabyRive/turn-app/issues"
   },
-  "homepage": "https://github.com/GabyRive/turn-app#readme"
+  "homepage": "https://github.com/GabyRive/turn-app#readme",
+  "devDependencies": {
+    "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "lodash": "^4.15.0",
+    "mongoose": "^4.6.1",
+    "twilio": "^2.10.0"
+  }
 }

@@ -1,0 +1,63 @@
+<div id="app-container" class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <p id="welcome-app">
+                Welcome to Turn.App !
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div id="date" class="col-xs-12 col-md-6">
+            <h4>Sunday, April 10, 2016</h4>
+            <p>
+                Pick a date:
+                <input type="text" id="datepicker">
+            </p>
+            <button id="addRow">Add new row</button>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <label class="select-hour" for="number">Select Hour</label>
+                <select name="hour" id="hour">
+        <option selected="selected">12:00</option>
+        <option>1:00</option>
+        <option>2:00</option>
+        <option>3:00</option>
+        <option>4:00</option>
+        <option>5:00</option>
+        <option>6:00</option>
+        <option>7:00</option>
+        <option>8:00</option>
+        <option>9:00</option>
+        <option>10:00</option>
+        <option>11:00</option>
+      </select>
+                <label class="select-hour" for="pm-am">AM | PM</label>
+                <select name="pm-am" id="pm-am">
+        <option>PM</option>
+        <option selected="selected">AM</option>
+      </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <table id="myTable" class="display" style="width:100%">
+                    <tr id="header-text">
+                        <th>Name | Last Name</th>
+                        <th>Phone Number</th>
+                        <th>Record Number</th>
+                        <th class="th-center">Reception</th>
+                        <th class="th-center">Service</th>
+                        <th class="th-center">Exit</th>
+                        <th class="th-center">Delete</th>
+                    </tr>
+                    <tbody id="sortable">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

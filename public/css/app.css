@@ -1,0 +1,14 @@
+.navbar-brand {
+  padding: 10px;
+}
+
+.navbar-brand > img {
+  width: 120px;
+  height: 30px;
+}
+
+.cat {
+  width: 400px;
+  height: 300px;
+  position: relative;
+}

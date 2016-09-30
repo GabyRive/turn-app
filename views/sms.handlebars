@@ -1,17 +1,54 @@
-<div class="row" style="margin-top: 200px;">
-  <form class="col-sm-6 col-sm-offset-3" action="/sms" method="post">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="text" class="form-control" id="patient" aria-describedby="recordHelp" placeholder="Enter patient's record number.">
-        <small id="recordHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+<div class="container-fluid">
+    <div id="date" class="col-xs-12 col-md-6" style="margin-top: 50px;">
+        <h4>Sunday, April 10, 2016</h4>
+        <p>
+            Pick a date:
+            <input type="text" id="datepicker">
+        </p>
+        <div class="row">
+            <div class="col-xs-12">
+                <label class="select-hour" for="number">Select Hour</label>
+                <select name="hour" id="hour">
+      <option selected="selected">12:00</option>
+      <option>1:00</option>
+      <option>2:00</option>
+      <option>3:00</option>
+      <option>4:00</option>
+      <option>5:00</option>
+      <option>6:00</option>
+      <option>7:00</option>
+      <option>8:00</option>
+      <option>9:00</option>
+      <option>10:00</option>
+      <option>11:00</option>
+    </select>
+                <label class="select-hour" for="pm-am">AM | PM</label>
+                <select name="pm-am" id="pm-am">
+      <option>PM</option>
+      <option selected="selected">AM</option>
+    </select>
+            </div>
+        </div>
     </div>
-
-    <div class="form-group">
-        <textarea id="txtmsg" name="txtmsgg" rows="6" cols="60" disabled>
-        {{msg}}
-      </textarea>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+    <table class="table">
+        <div class="row" style="margin-top: 100px;">
+            <form id="sms-form" class="col-sm-6 col-sm-offset-3" action="/sms" method="post">
+                <th class="th-center">Patient Record Number</th>
+                <th class="th-center">Insert Message</th>
+                <th class="th-center">Send Message</th>
+                <tr>
+                    <td>
+                        <input type="text" name="record" class="form-control" aria-describedby="recordHelp" placeholder="Enter patient's record number.">
+                        <small id="recordHelp" class="form-text text-muted">We'll never share the record number with anyone else.</small>
+                    </td>
+                    <td>
+                        <textarea class="form-control" name="smsBody" rows="2" cols="30" form="sms-form">{{msg}}</textarea>
+                    </td>
+                    <td>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </td>
+                </tr>
+            </form>
+        </div>
+    </table>
 </div>

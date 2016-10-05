@@ -1,14 +1,18 @@
 <div class="container-fluid">
-    <div id="date" class="col-xs-12 col-md-6" style="margin-top: 50px;">
-        <h4>Sunday, April 10, 2016</h4>
-        <p>
-            Pick a date:
-            <input type="text" id="datepicker">
-        </p>
-        <div class="row">
-            <div class="col-xs-12">
-                <label class="select-hour" for="number">Select Hour</label>
-                <select name="hour" id="hour">
+    <div class="row">
+
+        <div id="date" class="col-xs-12 col-md-6" style="margin-top: 50px;">
+            <h4>Sunday, April 10, 2016</h4>
+            <p>
+                Pick a date:
+                <input type="text" id="datepicker">
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <label class="select-hour" for="number">Select Hour</label>
+            <select name="hour" id="hour">
       <option selected="selected">12:00</option>
       <option>1:00</option>
       <option>2:00</option>
@@ -22,20 +26,33 @@
       <option>10:00</option>
       <option>11:00</option>
     </select>
-                <label class="select-hour" for="pm-am">AM | PM</label>
-                <select name="pm-am" id="pm-am">
+            <label class="select-hour" for="pm-am">AM | PM</label>
+            <select name="pm-am" id="pm-am">
       <option>PM</option>
       <option selected="selected">AM</option>
     </select>
-            </div>
         </div>
     </div>
-    <table class="table">
-        <div class="row" style="margin-top: 100px;">
-            <form id="sms-form" class="col-sm-6 col-sm-offset-3" action="/sms" method="post">
-                <th class="th-center">Patient Record Number</th>
-                <th class="th-center">Insert Message</th>
-                <th class="th-center">Send Message</th>
+</div>
+
+
+
+<div class="container">
+
+    <div class="row">
+        <button class="btn btn-primary" id="addRow" type="button" name="button">Add New Row</button>
+    </div>
+
+    <form id="sms-form" class="col-sm-12" action="/sms" method="post">
+        <table id="smsTable" class="table row">
+            <thead>
+                <tr>
+                    <th class="th-center">Patient Record Number</th>
+                    <th class="th-center">Insert Message</th>
+                    <th class="th-center">Send Message</th>
+                </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>
                         <input type="text" name="record" class="form-control" aria-describedby="recordHelp" placeholder="Enter patient's record number.">
@@ -48,7 +65,7 @@
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </td>
                 </tr>
-            </form>
-        </div>
-    </table>
-</div>
+            </tbody>
+
+        </table>
+    </form>

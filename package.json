@@ -14,7 +14,7 @@
     "url": "git+https://github.com/GabyRive/turn-app.git"
   },
   "author": "Gabriela Rivera",
-  "license": "GNU GPLv3",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/GabyRive/turn-app/issues"
   },

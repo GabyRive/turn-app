@@ -57,9 +57,9 @@ app.get('/sms', function(req, res, next) {
 
 //Twilio Send SMS
 app.post('/sms', function(req, res, next) {
-
-    var recordPatient = req.body.record;
-    var smsBody = req.body.smsBody;
+  // Parse JSON request.body
+    var recordPatient = req.body.record[0];
+    var smsBody = req.body.smsBody[0];
     models.Users.findOne({
         recordNumber: recordPatient
     }, {firstName: true, phoneNumber: true}, function(err, to) {
@@ -83,7 +83,6 @@ app.post('/sms', function(req, res, next) {
             }
             res.status(200).send('Message sent.', message, to.firstName);
         });
-
     });
 });
 

@@ -81,7 +81,7 @@ app.post('/sms', function(req, res, next) {
                 console.log(err.message);
                 return next(err);
             }
-            res.status(200).send('Message sent.', message, to.firstName);
+            res.status(200).send('Message sent to ' + to.firstName);
         });
     });
 });

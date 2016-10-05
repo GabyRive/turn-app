@@ -35,7 +35,7 @@ getFullDate = function() {
 }
 
 // Event Listener $('button#submit-1').on('click', inputData);
-// var inputData {
+// var inputData = {
     //recordNumber: String,
     //smsBody: String,
 //};

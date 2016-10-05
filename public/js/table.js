@@ -11,20 +11,24 @@ $(document).ready(function() {
 
     var t = $('#smsTable').DataTable();
     var input = `<td><input type="text" name="record" class="form-control" aria-describedby="recordHelp" placeholder="Enter patient's record number."><small id="recordHelp" class="form-text text-muted">We'll never share the record number with anyone else.</small></td>`;
-    var textarea = `<td><textarea class="form-control" name="smsBody" rows="2" cols="30" form="sms-form">{{msg}}</textarea></td>`;
+    var textarea = `<td><textarea class="form-control" name="smsBody" rows="2" cols="30" form="sms-form">Hello from Turn.App!</textarea></td>`;
+    var checkbox = `<input type="checkbox">`
     var button = `<td><button type="submit" class="btn btn-primary">Submit</button></td>`;
 
     $('#addRow').on( 'click', function () {
         t.row.add( [
           input,
           textarea,
+          checkbox,
+          checkbox,
+          checkbox,
           button
         ]).draw( );
         console.log("Adding row.");
     });
 
     // Automatically add a first row of data
-    $('#addRow').click();
+    // $('#addRow').click();
 });
 
 getFullDate = function() {

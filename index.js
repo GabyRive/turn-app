@@ -47,7 +47,7 @@ app.get('/registry', function(req, res) {
 
 //Twilio sms form
 app.get('/sms', function(req, res, next) {
-    var message = "Hello from the awesome app!";
+    var message = "Hello from Turn.App!";
     res.render('sms', {
         title: 'SMS Form',
         msg: message,
@@ -57,7 +57,12 @@ app.get('/sms', function(req, res, next) {
 
 //Twilio Send SMS
 app.post('/sms', function(req, res, next) {
-  // Parse JSON request.body
+  // req.body('sms', {
+  // JSON.parse({
+  //   recordPatient = 'record',
+  //   smsBody = 'smsBody'
+  //});
+  //}
     var recordPatient = req.body.record[0];
     var smsBody = req.body.smsBody[0];
     models.Users.findOne({

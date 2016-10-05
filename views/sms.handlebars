@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
 
-        <div id="date" class="col-xs-12 col-md-6" style="margin-top: 50px;">
+        <div id="date" class="col-xs-12 col-md-6" style="margin-top: 70px;">
             <h4>Sunday, April 10, 2016</h4>
             <p>
                 Pick a date:
@@ -40,7 +40,7 @@
 <div class="container">
 
     <div class="row">
-        <button class="btn btn-primary" id="addRow" type="button" name="button">Add New Row</button>
+        <button class="btn btn-info" id="addRow" type="button" name="button" style="margin-top: 30px;">Add New Row</button>
     </div>
 
     <form id="sms-form" class="col-sm-12" action="/sms" method="post">
@@ -49,6 +49,9 @@
                 <tr>
                     <th class="th-center">Patient Record Number</th>
                     <th class="th-center">Insert Message</th>
+                    <th class="th-center">Reception</th>
+                    <th class="th-center">Service</th>
+                    <th class="th-center">Exit</th>
                     <th class="th-center">Send Message</th>
                 </tr>
             </thead>
@@ -60,6 +63,15 @@
                     </td>
                     <td>
                         <textarea class="form-control" name="smsBody" rows="2" cols="30" form="sms-form">{{msg}}</textarea>
+                    </td>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        <input type="checkbox">
                     </td>
                     <td>
                         <button type="submit" class="btn btn-primary">Submit</button>

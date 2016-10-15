@@ -96,7 +96,7 @@ app.post('/sms', function(req, res, next) {
 });
 
 app.get('/register', (req, res, next) => {
-  res.render('register', )
+  res.render('register', {});
 });
 
 app.post('/register', (req, res, next) => {

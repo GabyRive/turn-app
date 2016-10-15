@@ -59,12 +59,13 @@ app.get('/sms', function(req, res, next) {
 app.post('/sms', function(req, res, next) {
   // req.body('sms', {
   // JSON.parse({
-  //   recordPatient = 'record',
-  //   smsBody = 'smsBody'
+  //   recordPatient: 'record',
+  //   smsBody: 'smsBody'
   //});
   //}
-    var recordPatient = req.body.record[0];
-    var smsBody = req.body.smsBody[0];
+    console.log(req.body);
+    var recordPatient = req.body.record;
+    var smsBody = req.body.smsBody;
     models.Users.findOne({
         recordNumber: recordPatient
     }, {firstName: true, phoneNumber: true}, function(err, to) {

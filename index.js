@@ -78,17 +78,27 @@ app.post('/sms', function(req, res, next) {
                 'Please provide an number in the "to" query string parameter.');
         };
 
-        clientTwilio.messages.create({
-            to: to.phoneNumber,
-            from: config.Twilio.tester.number,
-            body: smsBody
-        }, function(err, message) {
-            if (err) {
-                console.log(err.message);
-                return next(err);
-            }
-            res.status(200).send('Message sent to ' + to.firstName);
-        });
+        res.render('success', {
+            title: 'SMS Success',
+            layout: 'main',
+            patient: to
+        })
+
+        // clientTwilio.messages.create({
+        //     to: to.phoneNumber,
+        //     from: config.Twilio.tester.number,
+        //     body: smsBody
+        // }, function(err, message) {
+        //     if (err) {
+        //         console.log(err.message);
+        //         return next(err);
+        //     }
+        //     res.render('success', {
+        //         title: 'SMS Success',
+        //         layout: 'main',
+        //         patient: to
+        //     })
+        // });
     });
 });
 

@@ -21,7 +21,7 @@ app.set('view engine', 'handlebars');
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
-    extended: false
+    extended: true
 }))
 
 // parse application/json
@@ -75,7 +75,7 @@ app.post('/sms', function(req, res, next) {
             title: 'SMS Success',
             layout: 'main',
             patient: to
-        })
+        });
 
         // clientTwilio.messages.create({
         //     to: to.phoneNumber,
@@ -100,10 +100,11 @@ app.get('/register', (req, res, next) => {
 });
 
 app.post('/register', (req, res, next) => {
-
-  models.Users.insert(req.body.data, ()=>{
-    res.render('registerSuccess', { title: "Registered" });
-  })
+  console.log(req.body);
+  models.Users.create(req.body.data, (err, data)=>{
+    // if(err) res.send(Error);
+    res.render('register-success', { title: "Registered" });
+  });
 });
 
 app.listen(3000);

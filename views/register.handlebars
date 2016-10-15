@@ -1,82 +1,74 @@
 <div class="container-fluid">
-    <form class="row" action="index.html" method="post">
+    <form class="row" action="/register" method="post" style="padding-top: 70px">
         <div class="form-group row">
-            <label for="example-firstName-input" class="col-xs-2 col-form-label">First Name</label>
+            <label for="firstName-input" class="col-xs-2 col-form-label">First Name</label>
             <div class="col-xs-10">
-                <input class="form-control" type="text" value="Artisanal kale" id="example-firstName-input">
+                <input class="form-control" type="text" value="Artisanal kale" id="firstName-input" name='data[firstName]'>
             </div>
         </div>
         <div class="form-group row">
-            <label for="example-lastName-input" class="col-xs-2 col-form-label">Last Name</label>
+            <label for="lastName-input" class="col-xs-2 col-form-label">Last Name</label>
             <div class="col-xs-10">
-                <input class="form-control" type="search" value="How do I shoot web" id="example-lastName-input">
+                <input class="form-control" type="text" value="How do I shoot web" id="lastName-input" name='data[lastName]'>
             </div>
         </div>
         <div class="form-group row">
-            <label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
+            <label for="email-input" class="col-xs-2 col-form-label">Email</label>
             <div class="col-xs-10">
-                <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
+                <input class="form-control" type="text" value="bootstrap@example.com" id="email-input" name='data[email]'>
             </div>
         </div>
         <div class="form-group row">
-            <label for="example-url-input" class="col-xs-2 col-form-label">URL</label>
+            <label for="website-input" class="col-xs-2 col-form-label">Website</label>
             <div class="col-xs-10">
-                <input class="form-control" type="url" value="http://getbootstrap.com" id="example-url-input">
+                <input class="form-control" type="text" value="http://getbootstrap.com" id="website-input" name='data[website]'>
             </div>
         </div>
         <div class="form-group row">
-            <label for="example-tel-input" class="col-xs-2 col-form-label">Telephone</label>
+            <label for="tel-input" class="col-xs-2 col-form-label">Telephone</label>
             <div class="col-xs-10">
-                <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
+                <input class="form-control" type="text" value="1-(555)-555-5555" id="tel-input" name='data[tel]'>
             </div>
         </div>
         <div class="form-group row">
-            <label for="example-password-input" class="col-xs-2 col-form-label">Password</label>
+            <label for="specialization-input" class="col-xs-2 col-form-label">Specialization</label>
             <div class="col-xs-10">
-                <input class="form-control" type="password" value="hunter2" id="example-password-input">
+                <input class="form-control" type="text" value="Specialization" id="specialization-input" name='data[specialization]'>
             </div>
         </div>
         <div class="form-group row">
-            <label for="example-number-input" class="col-xs-2 col-form-label">Number</label>
+            <label for="address-input" class="col-xs-2 col-form-label">Address</label>
             <div class="col-xs-10">
-                <input class="form-control" type="number" value="42" id="example-number-input">
+              <input class="form-control" type="text" value="Address" id="address-input" name="data[address][line]">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-xs-offset-2 col-xs-2">
+                <input class="form-control" type="text" value="city" id="city-input" name="data[address][city]">
+            </div>
+            <!-- <div class="col-xs-4">
+                <input class="form-control" type="text" value="state" id="address-input" name="data[address.state]">
+            </div> -->
+            <div class="col-xs-2">
+                <input class="form-control" type="text" value="zipcode" id="zipcode-input" name="data[address][zipcode]">
+            </div>
+      </div>
+        <div class="form-group row">
+            <label for="insurance-local-input" class="col-xs-2 col-form-label">Insurance</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="texttext" value="Insurance" id="insurance-local-input" name='data[insurance]'>
             </div>
         </div>
         <div class="form-group row">
-            <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Date and time</label>
+            <label for="schedule-input" class="col-xs-2 col-form-label">Schedule</label>
             <div class="col-xs-10">
-                <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                <input class="form-control" type="text" value="Working Hours" id="schedule-input" name='data[schedule]'>
             </div>
         </div>
-        <div class="form-group row">
-            <label for="example-date-input" class="col-xs-2 col-form-label">Date</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-month-input" class="col-xs-2 col-form-label">Month</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="month" value="2011-08" id="example-month-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-week-input" class="col-xs-2 col-form-label">Week</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="week" value="2011-W33" id="example-week-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-time-input" class="col-xs-2 col-form-label">Time</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-color-input" class="col-xs-2 col-form-label">Color</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="color" value="#563d7c" id="example-color-input">
-            </div>
+        <div class="row">
+          <div class="col-xs-offset-6 col-xs-4">
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+          </div>
         </div>
     </form>
 </div>

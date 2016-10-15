@@ -57,18 +57,11 @@ app.get('/sms', function(req, res, next) {
 
 //Twilio Send SMS
 app.post('/sms', function(req, res, next) {
-  // req.body('sms', {
-  // JSON.parse({
-  //   recordPatient: 'record',
-  //   smsBody: 'smsBody'
-  //});
-  //}
-    console.log(req.body);
     var recordPatient = req.body.record;
     var smsBody = req.body.smsBody;
-    models.Users.findOne({
+    models.Patients.findOne({
         recordNumber: recordPatient
-    }, {firstName: true, phoneNumber: true}, function(err, to) {
+    }, function(err, to) {
       if(err){
         throw err;
       }
@@ -90,6 +83,17 @@ app.post('/sms', function(req, res, next) {
             res.status(200).send('Message sent to ' + to.firstName);
         });
     });
+});
+
+app.get('/register', (req, res, next) => {
+  res.render('register', )
+});
+
+app.post('/register', (req, res, next) => {
+
+  models.Users.insert(req.body.data, ()=>{
+    res.render('registerSuccess', { title: "Registered" });
+  })
 });
 
 app.listen(3000);

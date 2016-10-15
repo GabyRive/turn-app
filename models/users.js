@@ -1,10 +1,24 @@
 const mongoose = require('mongoose');
 
 var usersSchema = mongoose.Schema({
-    firstName: String,
-    lastName: String,
-    phoneNumber: String,
-    recordNumber: String
+  firstName: String,
+  lastName: String,
+  phoneNumber: String,
+  specialization: String,
+
+  schedule: {
+    hours: {open: String, close: String}
+  },
+
+  address: {
+    line: [],
+    city: String,
+    state: {type: String, default: "PR"},
+    zipcode: String,
+    maps: String
+  },
+  issurance: []
+
 });
 
 module.exports = mongoose.model('users', usersSchema);

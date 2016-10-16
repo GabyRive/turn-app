@@ -99,7 +99,7 @@ app.post('/', function(req, res){
 //Twilio sms form
 app.get('/sms', function(req, res, next) {
   var message = "Hello from Turn.App!";
-  res.render('sms', {
+  res.render('sms/sms', {
     title: 'SMS Form',
     msg: message,
     layout: "main"
@@ -122,7 +122,7 @@ app.post('/sms', function(req, res, next) {
         'Please provide an number in the "to" query string parameter.');
     };
 
-    res.render('sms-success', {
+    res.render('sms/sms-success', {
       title: 'SMS Success',
       layout: 'main',
       patient: to
@@ -147,14 +147,14 @@ app.post('/sms', function(req, res, next) {
 });
 
 app.get('/register', (req, res, next) => {
-  res.render('register', {});
+  res.render('account/register', {});
 });
 
 app.post('/register', (req, res, next) => {
   const patient = req.body.data;
   models.Users.create(patient, function(err, data) {
     if(err) console.log(err);;
-    res.render('register-success', {
+    res.render('account/register-success', {
       title: "Registered"
     });
   });

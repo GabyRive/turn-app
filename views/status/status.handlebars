@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="" style="padding-top: 70px">
+
+    {{#each patients}}
+      <form class="row" action="/status" method="get">
+
+        <div class="form-group row">
+          <label for="patient-record" class="col-xs-2 col-form-label">{{this.record}}</label>
+          <input type="hidden" id="patient-record" name="data[record]" value={{this.record}} >
+
+          <div class=" col-xs-2">
+            <button type="submit" name="reception" class="btn btn-primary" value="true">Reception</button>
+          </div>
+          <div class=" col-xs-2">
+            <button type="submit" name="service" class="btn btn-primary" value="true">Service</button>
+          </div>
+          <div class=" col-xs-2">
+            <button type="submit" name="exit" class="btn btn-primary" value="true">Exit</button>
+          </div>
+        </div>
+
+      </form>
+
+    {{/each}}
+
+  </div>
+</div>

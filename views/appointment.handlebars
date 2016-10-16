@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="" style="padding-top: 70px">
+    <form class="row" action="/status" method="post">
+
+      <div class="form-group row">
+        <label for="patient-record" class="col-xs-2 col-form-label">Record</label>
+        <input type="text" id="patient-record"name="data[record]" placeholder="record #">
+      </div>
+
+      <!-- Date selector -->
+      <!-- html only -->
+      <div class="row">
+        <div class="col-xs-4">
+          <p>
+            Pick a Date:
+            <input id="datepicker" type="text" name="data[date]" >
+          </p>
+        </div>
+      </div>
+
+      <!-- Hour selector -->
+      <!-- html only -->
+      <div class="row">
+          <div class="col-xs-12">
+              <label class="select-hour" for="number">Select Hour</label>
+              <select name="data[hour]" id="hour">
+        <option selected="selected">12:00</option>
+        <option>1:00</option>
+        <option>2:00</option>
+        <option>3:00</option>
+        <option>4:00</option>
+        <option>5:00</option>
+        <option>6:00</option>
+        <option>7:00</option>
+        <option>8:00</option>
+        <option>9:00</option>
+        <option>10:00</option>
+        <option>11:00</option>
+      </select>
+              <label class="select-hour" for="pm-am">AM | PM</label>
+              <select name="pm-am" id="pm-am">
+        <option>PM</option>
+        <option selected="selected">AM</option>
+      </select>
+          </div>
+      </div>
+    </form>
+  </div>
+</div>

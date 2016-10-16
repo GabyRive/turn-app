@@ -6,7 +6,10 @@ var patientSchema = mongoose.Schema({
     phoneNumber: String,
     recordNumber: String,
 
-    appointments: []
+    appointments: [{
+      date: { type: String },
+      hour: { type: String }
+    }]
 });
 
 module.exports = mongoose.model('patient', patientSchema);

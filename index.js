@@ -1,4 +1,5 @@
 var express = require('express');
+// const router = express.Router();
 var exphbs = require('express-handlebars');
 var mongoose = require('mongoose');
 var config = require('./config.js');
@@ -12,10 +13,23 @@ var app = express();
 mongoose.connect('mongodb://localhost:27017/turnapp');
 var models = require('./models');
 
+
+
+
+  // app.use(express.static('public'));
+  // app.use(express.cookieParser());
+  // app.use(express.bodyParser());
+  // app.use(express.session({ secret: 'keyboard cat' }));
+  app.use(passport.initialize());
+  app.use(passport.session());
+  // app.use(app.router);
+
+
 //Use passport-local
 passport.use(new LocalStrategy(
   function(username, password, done) {
-    User.findOne({
+    console.log("woLking");
+    models.Users.findOne({
       username: username
     }, function(err, user) {
       if (err) {
@@ -40,9 +54,16 @@ passport.use(new LocalStrategy(
 var clientTwilio = new twilio.RestClient(config.Twilio.accountSID, config.Twilio.authToken);
 
 app.use(express.static('public'));
-app.engine('handlebars', exphbs({
+
+const hbs = exphbs({
   defaultLayout: 'landing'
-}));
+});
+
+// const hbs = exphbs.create({
+//   helpers : require('./helpers.js'),
+// });
+
+app.engine('handlebars', hbs);
 app.set('view engine', 'handlebars');
 
 // parse application/x-www-form-urlencoded
@@ -59,21 +80,21 @@ app.get('/', function(req, res) {
   });
 });
 
+//Login submit to server
 app.post('/', function(req, res){
   passport.authenticate('local', {
     successRedirect: '/sms',
     failureRedirect: '/',
-    failureFlash: true,
-    layout: 'main'
+    failureFlash: true
   });
 });
 
-app.get('/login', function(req, res) {
-  res.render('login', {
-    title: "Login",
-    layout: "main"
-  });
-});
+// app.get('/login', function(req, res) {
+//   res.render('login', {
+//     title: "Login",
+//     layout: "main"
+//   });
+// });
 
 //Twilio sms form
 app.get('/sms', function(req, res, next) {
@@ -130,14 +151,16 @@ app.get('/register', (req, res, next) => {
 });
 
 app.post('/register', (req, res, next) => {
-  console.log(req.body);
-  models.Users.create(req.body.data, (err, data) => {
-    // if(err) res.send(Error);
+  const patient = req.body.data;
+  models.Users.create(patient, function(err, data) {
+    if(err) console.log(err);;
     res.render('register-success', {
       title: "Registered"
     });
   });
 });
+
+require('./routes')(app)
 
 
 app.listen(3000);

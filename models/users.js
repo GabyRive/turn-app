@@ -11,7 +11,10 @@ var usersSchema = mongoose.Schema({
   password: { type: String, required: true },
 
   schedule: {
-    hours: {open: String, close: String}
+    hours: {
+      open: { value: String, meridiem: String },
+      close: { value: String, meridiem: String }
+    }
   },
 
   address: {

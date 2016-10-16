@@ -3,72 +3,115 @@
         <div class="form-group row">
             <label for="firstName-input" class="col-xs-2 col-form-label">First Name</label>
             <div class="col-xs-10">
-                <input class="form-control" type="text" placeholder="First Name" id="firstName-input" name='data[firstName]'>
+                <input class="form-control" type="text" placeholder="First Name" id="firstName-input" name='data[firstName]' required>
             </div>
         </div>
         <div class="form-group row">
             <label for="lastName-input" class="col-xs-2 col-form-label">Last Name</label>
             <div class="col-xs-10">
-                <input class="form-control" type="text" placeholder="Last Name" id="lastName-input" name='data[lastName]'>
+                <input class="form-control" type="text" placeholder="Last Name" id="lastName-input" name='data[lastName]' required>
             </div>
         </div>
         <div class="form-group row">
             <label for="email-input" class="col-xs-2 col-form-label">Email</label>
             <div class="col-xs-10">
-                <input class="form-control" type="text" placeholder="email@example.com" id="email-input" name='data[email]'>
+                <input class="form-control" type="text" placeholder="email@example.com" id="email-input" name='data[username]' required>
             </div>
         </div>
         <div class="form-group row">
             <label for="password-input" class="col-xs-2 col-form-label">Create Password</label>
             <div class="col-xs-10">
-                <input class="form-control" type="text" placeholder="Enter Password" id="email-input" name='data[password]'>
+                <input class="form-control" type="password" placeholder="Must have at least 6 characters" id="email-input" name='data[password]' required>
             </div>
         </div>
         <div class="form-group row">
             <label for="website-input" class="col-xs-2 col-form-label">Website</label>
             <div class="col-xs-10">
-                <input class="form-control" type="text" placeholder="http://getbootstrap.com" id="website-input" name='data[website]'>
+                <input class="form-control" type="text" placeholder="http://examplemyweb.com" id="website-input" name='data[website]' required>
             </div>
         </div>
         <div class="form-group row">
             <label for="tel-input" class="col-xs-2 col-form-label">Telephone</label>
             <div class="col-xs-10">
-                <input class="form-control" type="text" placeholder="1-(555)-555-5555" id="tel-input" name='data[tel]'>
+                <input class="form-control" type="text" placeholder="1-(555)-555-5555" id="tel-input" name='data[tel]' required>
             </div>
         </div>
         <div class="form-group row">
             <label for="specialization-input" class="col-xs-2 col-form-label">Specialization</label>
             <div class="col-xs-10">
-                <input class="form-control" type="text" placeholder="Specialization" id="specialization-input" name='data[specialization]'>
+                <input class="form-control" type="text" placeholder="Specialization" id="specialization-input" name='data[specialization]' required>
             </div>
         </div>
         <div class="form-group row">
             <label for="address-input" class="col-xs-2 col-form-label">Address</label>
             <div class="col-xs-10">
-              <input class="form-control" type="text" placeholder="Address" id="address-input" name="data[address][line]">
+              <input class="form-control" type="text" placeholder="Address" id="address-input" name="data[address][line]" required>
             </div>
           </div>
           <div class="form-group row">
             <div class="col-xs-offset-2 col-xs-2">
-                <input class="form-control" type="text" placeholder="city" id="city-input" name="data[address][city]">
+                <input class="form-control" type="text" placeholder="City" id="city-input" name="data[address][city]" required>
             </div>
             <!-- <div class="col-xs-4">
                 <input class="form-control" type="text" placeholder="state" id="address-input" name="data[address.state]">
             </div> -->
             <div class="col-xs-2">
-                <input class="form-control" type="text" placeholder="zipcode" id="zipcode-input" name="data[address][zipcode]">
+                <input class="form-control" type="text" placeholder="Zipcode" id="zipcode-input" name="data[address][zipcode]" required>
             </div>
       </div>
         <div class="form-group row">
             <label for="insurance-local-input" class="col-xs-2 col-form-label">Insurance</label>
             <div class="col-xs-10">
-                <input class="form-control" type="texttext" placeholder="Insurance" id="insurance-local-input" name='data[insurance]'>
+                <input class="form-control" type="texttext" placeholder="Insurance" id="insurance-local-input" name='data[insurance]' required>
             </div>
         </div>
         <div class="form-group row">
             <label for="schedule-input" class="col-xs-2 col-form-label">Schedule</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="text" placeholder="Working Hours" id="schedule-input" name='data[schedule]'>
+            <div class="col-xs-2">
+                <select class="form-control" type="text" placeholder="Opening Hour" id="open-input" name='data[schedule][hours][open][value]' required>
+          <option selected="selected">Opening Hour</option>
+          <option>12:00</option>
+          <option>1:00</option>
+          <option>2:00</option>
+          <option>3:00</option>
+          <option>4:00</option>
+          <option>5:00</option>
+          <option>6:00</option>
+          <option>7:00</option>
+          <option>8:00</option>
+          <option>9:00</option>
+          <option>10:00</option>
+          <option>11:00</option>
+        </select>
+            </div>
+            <div class="col-xs-1">
+              <select class="form-control" name="data[schedule][hours][open][meridiem]" id="pm-am">
+                <option>PM</option>
+                <option selected="selected">AM</option>
+              </select>
+            </div>
+            <div class="col-xs-2">
+                <select class="form-control" type="text" placeholder="Closing Hour" id="close-input" name='data[schedule][hours][close][value]' required>
+          <option selected="selected">Closing Hour</option>
+          <option>12:00</option>
+          <option>1:00</option>
+          <option>2:00</option>
+          <option>3:00</option>
+          <option>4:00</option>
+          <option>5:00</option>
+          <option>6:00</option>
+          <option>7:00</option>
+          <option>8:00</option>
+          <option>9:00</option>
+          <option>10:00</option>
+          <option>11:00</option>
+        </select>
+            </div>
+            <div class="col-xs-1">
+              <select class="form-control" name="data[schedule][hours][close][meridiem]" id="pm-am">
+                <option selected="selected">PM</option>
+                <option>AM</option>
+              </select>
             </div>
         </div>
         <div class="row">

@@ -101,7 +101,7 @@ app.post('/sms', function(req, res, next) {
         'Please provide an number in the "to" query string parameter.');
     };
 
-    res.render('success', {
+    res.render('sms-success', {
       title: 'SMS Success',
       layout: 'main',
       patient: to
